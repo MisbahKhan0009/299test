@@ -1,0 +1,55 @@
+{
+  "model_config": {
+    "target_sr": 22050,
+    "target_format": "wav",
+    "target_duration_sec": 5.0,
+    "mono": true,
+    "standardized_root": "c:\\Users\\mkhan\\Documents\\Projects\\Niha2\\Notebook\\..\\Dataset\\Dataset_standardized"
+  },
+  "selected_features": [
+    "mfcc1_mean",
+    "mfcc2_mean",
+    "mfcc3_mean",
+    "mfcc4_mean",
+    "mfcc5_mean",
+    "zcr_mean",
+    "centroid_mean",
+    "bandwidth_mean",
+    "rolloff_mean",
+    "rms_mean",
+    "f0_mean"
+  ],
+  "augmentation_plan": {
+    "noise": {
+      "snr_db": [
+        10,
+        20
+      ]
+    },
+    "pitch_shift": {
+      "steps": [
+        -2,
+        -1,
+        1,
+        2
+      ]
+    },
+    "time_stretch": {
+      "rate": [
+        0.9,
+        1.1
+      ]
+    },
+    "spec_augment": {
+      "freq_mask_param": 8,
+      "time_mask_param": 16
+    }
+  },
+  "split": {
+    "strategy": "stratified_by_category",
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15,
+    "random_state": 42
+  }
+}
